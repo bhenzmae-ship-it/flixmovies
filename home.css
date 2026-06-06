@@ -283,4 +283,39 @@
     flex-direction: row;
     gap: 8px;
   }
+}}
+    
+
+@keyframes glowBorder {
+   0% { box-shadow: 0 0 5px #ff4500; }
+   50% { box-shadow: 0 0 20px #ff4500; }
+   100% { box-shadow: 0 0 5px #ff4500; }
+}
+
+.search-bar {
+   border: 2px solid #ff4500;
+   animation: glowBorder 2s infinite;
+}
+
+.row h2 {
+   animation: glowBorder 2s infinite;
+}
+
+.list img {
+   transition: .4s;
+}
+
+.list img:hover {
+   transform: scale(1.08);
+   box-shadow: 0 0 20px #ff4500;
+}
+
+.navbar {
+   border-bottom: 2px solid #ff4500;
+   animation: glowBorder 2s infinite;
+}
+
+.banner {
+   border: 2px solid #ff4500;
+   animation: glowBorder 2s infinite;
 }
