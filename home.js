@@ -5,11 +5,22 @@ const IMG_URL = 'https://image.tmdb.org/t/p/original';
 let currentItem;
 
     async function fetchTrending(type) {
-      const res = await fetch(`${BASE_URL}/trending/${type}/week?api_key=${API_KEY}`);
-      const data = await res.json();
-      return data.results;
-    }
+   let allResults = [];
 
+   for (let page = 1; page <= 1000; page++) {
+      const res = await fetch(
+         `${BASE_URL}/trending/${type}/week?api_key=${API_KEY}&page=${page}`
+      );
+
+      const data = await res.json();
+
+      if (!data.results) break;
+
+      allResults = allResults.concat(data.results);
+   }
+
+   return allResults;
+}
     async function fetchTrendingAnime() {
   let allResults = [];
 
