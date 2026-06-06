@@ -137,7 +137,8 @@ async function fetchCategory(endpoint) {
   return allResults.slice(0, 100);
 }
 
-async function init() {
+  async function init() {
+
   const movies = await fetchTrending('movie');
   const tvShows = await fetchTrending('tv');
   const anime = await fetchTrendingAnime();
@@ -147,18 +148,19 @@ async function init() {
   );
 
   displayList(movies, 'popular-movies');
-  displayList(movies, 'top-rated-movies');
-  displayList(movies, 'now-playing');
-  displayList(movies, 'upcoming-movies');
-
   displayList(tvShows, 'tvshows-list');
   displayList(anime, 'anime-list');
 
+  // para may laman din ibang categories
+  displayList(movies, 'top-rated-movies');
+  displayList(movies, 'now-playing');
+  displayList(movies, 'upcoming-movies');
   displayList(movies, 'trending-list');
+      
   displayList(movies, 'comedy-list');
-  displayList(movies, 'horror-list');
-  displayList(movies, 'scifi-list');
-  displayList(movies, 'action-list');
+displayList(movies, 'horror-list');
+displayList(movies, 'scifi-list');
+displayList(movies, 'action-list');
 }
 
 init();
