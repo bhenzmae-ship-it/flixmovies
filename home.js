@@ -7,7 +7,7 @@ let currentItem;
     async function fetchTrending(type) {
    let allResults = [];
 
-   for (let page = 1; page <= 50; page++) {
+   for (let page = 1; page <= 500; page++) {
       const res = await fetch(
          `${BASE_URL}/trending/${type}/week?api_key=${API_KEY}&page=${page}`
       );
@@ -25,7 +25,7 @@ let currentItem;
   let allResults = [];
 
   // Fetch from multiple pages to get more anime (max 3 pages for demo)
-  for (let page = 1; page <= 3; page++) {
+  for (let page = 1; page <= 500; page++) {
     const res = await fetch(`${BASE_URL}/trending/tv/week?api_key=${API_KEY}&page=${page}`);
     const data = await res.json();
     const filtered = data.results.filter(item =>
