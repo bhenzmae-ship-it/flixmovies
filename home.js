@@ -145,41 +145,19 @@ async function searchTMDB() {
     container.appendChild(img);
   });
 }
-
+}
 async function init() {
-  const popularMovies =
-    await fetchCategory('/movie/popular');
+  const movies = await fetchTrending('movie');
+  const tvShows = await fetchTrending('tv');
+  const anime = await fetchTrendingAnime();
 
-  const topRatedMovies =
-    await fetchCategory('/movie/top_rated');
+  displayBanner(
+    movies[Math.floor(Math.random() * movies.length)]
+  );
 
-  const nowPlaying =
-    await fetchCategory('/movie/now_playing');
-
-  const upcomingMovies =
-    await fetchCategory('/movie/upcoming');
-
-  const tvShows =
-    await fetchTrending('tv');
-
-  const anime =
-    await fetchTrendingAnime();
-
-  displayBanner(popularMovies[0]);
-
-  displayList(popularMovies, 'popular-movies');
-  displayList(topRatedMovies, 'top-rated-movies');
-  displayList(nowPlaying, 'now-playing');
-  displayList(upcomingMovies, 'upcoming-movies');
-
+  displayList(movies, 'popular-movies');
   displayList(tvShows, 'tvshows-list');
   displayList(anime, 'anime-list');
-
-  displayList(popularMovies, 'trending-list');
-  displayList(popularMovies, 'comedy-list');
-  displayList(popularMovies, 'horror-list');
-  displayList(popularMovies, 'scifi-list');
-  displayList(popularMovies, 'action-list');
 }
 
-init();
+init();  
