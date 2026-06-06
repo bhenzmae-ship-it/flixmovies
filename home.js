@@ -138,27 +138,24 @@ const API_KEY = 'db8e12064a5542eb774a36a5378e52c6';
 
   async function init() {
 
-  const popularMovies = await fetchCategory('/movie/popular');
-  const topRatedMovies = await fetchCategory('/movie/top_rated');
-  const nowPlaying = await fetchCategory('/movie/now_playing');
-  const upcomingMovies = await fetchCategory('/movie/upcoming');
-
-  const tvShows = await fetchCategory('/tv/popular');
-  const trendingMovies = await fetchTrending('movie');
+  const movies = await fetchTrending('movie');
+  const tvShows = await fetchTrending('tv');
   const anime = await fetchTrendingAnime();
 
   displayBanner(
-    popularMovies[Math.floor(Math.random() * popularMovies.length)]
+    movies[Math.floor(Math.random() * movies.length)]
   );
 
-  displayList(popularMovies, 'popular-movies');
-  displayList(topRatedMovies, 'top-rated-movies');
-  displayList(nowPlaying, 'now-playing');
-  displayList(upcomingMovies, 'upcoming-movies');
-
+  displayList(movies, 'popular-movies');
   displayList(tvShows, 'tvshows-list');
   displayList(anime, 'anime-list');
-  displayList(trendingMovies, 'trending-list');
+
+  // para may laman din ibang categories
+  displayList(movies, 'top-rated-movies');
+  displayList(movies, 'now-playing');
+  displayList(movies, 'upcoming-movies');
+  displayList(movies, 'trending-list');
+
 }
 
 init();
