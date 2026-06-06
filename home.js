@@ -7,7 +7,7 @@ let currentItem;
     async function fetchTrending(type) {
    let allResults = [];
 
-   for (let page = 1; page <= 500; page++) {
+   for (let page = 1; page <= 50; page++) {
       const res = await fetch(
          `${BASE_URL}/trending/${type}/week?api_key=${API_KEY}&page=${page}`
       );
