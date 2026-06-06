@@ -116,15 +116,17 @@ const API_KEY = 'db8e12064a5542eb774a36a5378e52c6';
         };
         container.appendChild(img);
       });
-    }
-
-    async function fetchCategory(endpoint) {
+    
+async function fetchCategory(endpoint) {
   let allResults = [];
 
   for (let page = 1; page <= 5; page++) {
+    const separator = endpoint.includes('?') ? '&' : '?';
+
     const res = await fetch(
-      `${BASE_URL}${endpoint}?api_key=${API_KEY}&page=${page}`
+      `${BASE_URL}${endpoint}${separator}api_key=${API_KEY}&page=${page}`
     );
+
     const data = await res.json();
 
     if (data.results) {
@@ -134,7 +136,6 @@ const API_KEY = 'db8e12064a5542eb774a36a5378e52c6';
 
   return allResults.slice(0, 100);
 }
-
 
   async function init() {
 
