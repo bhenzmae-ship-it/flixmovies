@@ -145,7 +145,7 @@ async function searchTMDB() {
     container.appendChild(img);
   });
 }
-}
+
 async function init() {
   const movies = await fetchTrending('movie');
   const tvShows = await fetchTrending('tv');
