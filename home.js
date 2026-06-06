@@ -1,7 +1,8 @@
-const API_KEY = 'const API_KEY = '92e92de7768ef59ee1a9c8935d072b39';
-    const BASE_URL = 'https://api.themoviedb.org/3';
-    const IMG_URL = 'https://image.tmdb.org/t/p/original';
-    let currentItem;
+const API_KEY = '92e92de7768ef59ee1a9c8935d072b39';
+const BASE_URL = 'https://api.themoviedb.org/3';
+const IMG_URL = 'https://image.tmdb.org/t/p/original';
+
+let currentItem;
 
     async function fetchTrending(type) {
       const res = await fetch(`${BASE_URL}/trending/${type}/week?api_key=${API_KEY}`);
