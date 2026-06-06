@@ -155,6 +155,7 @@ const API_KEY = 'db8e12064a5542eb774a36a5378e52c6';
   displayList(movies, 'now-playing');
   displayList(movies, 'upcoming-movies');
   displayList(movies, 'trending-list');
+      
   displayList(movies, 'comedy-list');
 displayList(movies, 'horror-list');
 displayList(movies, 'scifi-list');
