@@ -15,7 +15,7 @@ const API_KEY = 'db8e12064a5542eb774a36a5378e52c6';
     allResults = allResults.concat(data.results);
   }
 
-  return allResults.slice(0, 50);
+  return allResults.slice(0, 550);
     }
 
     async function fetchTrendingAnime() {
