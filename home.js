@@ -149,13 +149,9 @@ async function init() {
     popularMovies[Math.floor(Math.random() * popularMovies.length)]
   );
 
-  displayList(popularMovies, 'popular-movies');
-  displayList(topRatedMovies, 'top-rated-movies');
-  displayList(nowPlaying, 'now-playing');
-  displayList(upcomingMovies, 'upcoming-movies');
-  displayList(tvShows, 'tvshows-list');
-  displayList(anime, 'anime-list');
-  displayList(trendingMovies, 'trending-list');
+  displayList(popularMovies, 'movies-list');
+displayList(tvShows, 'tvshows-list');
+displayList(anime, 'anime-list');
 }
 
 init();
