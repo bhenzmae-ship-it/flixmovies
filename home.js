@@ -135,7 +135,6 @@ const API_KEY = 'db8e12064a5542eb774a36a5378e52c6';
   return allResults.slice(0, 100);
 }
 
-async function init() {
 
   async function init() {
 
